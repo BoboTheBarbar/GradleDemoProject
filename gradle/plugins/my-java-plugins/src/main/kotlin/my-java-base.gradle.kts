@@ -14,22 +14,3 @@ tasks.compileJava {
 tasks.compileTestJava {
     options.encoding = "UTF-8"
 }
-
-tasks.register<JarCount>("countJars") {
-    group = "my Group"
-    description = "Counts!"
-
-    allJars.from(tasks.jar)
-    allJars.from(configurations.runtimeClasspath)
-
-    countFile.set(layout.buildDirectory.file("gen/count.txt"))
-}
-
-tasks.register<Zip>("bundle") {
-    group = "my group"
-    description = "packages it all!"
-    from(tasks.jar)
-    from(configurations.runtimeClasspath)
-
-    destinationDirectory.set(layout.buildDirectory.dir("distribution"))
-}
