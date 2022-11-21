@@ -16,6 +16,9 @@ tasks.compileTestJava {
 }
 
 tasks.register<JarCount>("countJars") {
+    group = "my Group"
+    description = "Counts!"
+
     allJars.from(tasks.jar)
     allJars.from(configurations.runtimeClasspath)
 
