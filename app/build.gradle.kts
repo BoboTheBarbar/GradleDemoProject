@@ -3,5 +3,14 @@
  */
 plugins {
     // application add functionality for packaging and running java applications
-    id("my-application")    // apply a plugin with id() and gradle offers a java plugin
+    id("my-application")
+}
+
+application {
+    mainClass.set("com.example.MyApplication")
+}
+
+dependencies {
+    implementation(project(":data-model"))
+    implementation(project(":business-logic"))
 }
