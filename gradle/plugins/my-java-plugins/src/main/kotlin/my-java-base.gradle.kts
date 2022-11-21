@@ -14,3 +14,12 @@ tasks.compileJava {
 tasks.compileTestJava {
     options.encoding = "UTF-8"
 }
+
+tasks.register<Zip>("bundle") {
+    group = "my group"
+    description = "packages it all!"
+    from(tasks.jar)
+    from(configurations.runtimeClasspath)
+
+    destinationDirectory.set(layout.buildDirectory.dir("distribution"))
+}
