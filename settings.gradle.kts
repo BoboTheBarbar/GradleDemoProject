@@ -11,6 +11,7 @@ dependencyResolutionManagement {
 
     // Tell gradle, that there is another project that would need to be build. We only inform about locations here.
     //    includeBuild("../my-other-project")
+    includeBuild("gradle/platform")
 }
 
 /**

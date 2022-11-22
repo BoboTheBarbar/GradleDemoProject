@@ -11,6 +11,10 @@ application {
 }
 
 dependencies {
+    implementation(platform("com.example:platform"))
+
     implementation(project(":data-model"))
     implementation(project(":business-logic"))
+
+    runtimeOnly("org.slf4j:slf4j-simple")
 }
